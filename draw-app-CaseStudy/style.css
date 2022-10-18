@@ -1,0 +1,90 @@
+html,
+body {
+	margin: 0px;
+	height: 100%;
+}
+
+
+/* DIV box attributes */
+.wrapper {
+
+	display: grid;
+	height: 100%;
+	grid-template-columns: 80px 280px minmax(500px, 1fr);
+	grid-template-rows: 40px minmax(500px, 1fr) 160px 20px;
+	grid-template-areas:
+		"header header header"
+		"sidebar content content"
+		"colourP colourP options"
+		"footer footer footer";
+	background-color: #fff;
+	color: #444;
+}
+
+.box {
+	background-color: #444;
+	color: #fff;
+	font-size: 150%;
+}
+
+.header {
+
+	background-color: rgb(139, 168, 157);
+	text-align: center;
+	border: 3px solid green;
+	padding: 3px 0;
+	grid-area: header;
+	font-family: Helvetica, sans-serif
+}
+
+
+#sidebar {
+	grid-area: sidebar;
+	overflow-y: scroll;
+}
+
+#content {
+	grid-area: content;
+
+}
+
+
+.footer {
+	grid-area: footer;
+	text-align: center;
+	font-size: 12px;
+	font-style: inherit;
+}
+
+.sideBarItem {
+	max-height: 50px;
+	max-width: 50px;
+	padding: 5px;
+}
+
+.sideBarItem img {
+	max-height: 50px;
+	max-Width: 50px;
+}
+
+.colourPalette {
+	grid-area: colourP;
+	padding: 10px;
+	display: flex;
+	flex-direction: grid;
+	flex-flow: wrap;
+}
+
+.options {
+	grid-area: options;
+	padding: 15px;
+}
+
+.colourSwatches {
+	box-sizing: border-box;
+	width: 40px;
+	height: 40px;
+	max-height: 40px;
+	max-width: 40px;
+	margin: 5px;
+}

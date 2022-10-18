@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      /*
+      ####################################
+      #        2022(c) Powered by        #
+      #                                  #
+      #     Luca (Tarrasqu3) Galliani    #
+      #    Email: tarrasqu3@gmail.com    #
+      ####################################
+      */
+    </script>
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.dom.js"></script>
+
+    <script src="sketch.js"></script>
+
+    <!-- add extra scripts below -->
+    <script src="toolbox.js"></script>
+    <script src="colourPalette.js"></script>
+    <script src="helperFunctions.js"></script>
+    <script src="freehandTool.js"></script>
+    <script src="lineToTool.js"></script>
+    <script src="mirrorDrawTool.js"></script>
+    <!-- call CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <!-- div container, splitted by grid, more details are in CSS style linked -->
+    <div class="wrapper">
+      <div class="box header">
+        <b>Tarrasqu3</b> - Personal Drawing App
+        <button id="clearButton">Clean canvas</button>
+        <button id="saveImageButton">Save Image</button>
+      </div>
+      <div class="box" id="sidebar"></div>
+      <div id="content"></div>
+      <div class="box colourPalette"></div>
+      <div class="box options"></div>
+      <!-- div footer, splitted by grid, more details are in CSS style linked -->
+
+      <div class="box footer">
+        &copy; 2022. All Rights Reserved. Powered by: Luca - Tarrasqu3 -
+        Galliani
+      </div>
+    </div>
+  </body>
+</html>
