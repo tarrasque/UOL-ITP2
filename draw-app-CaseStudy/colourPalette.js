@@ -56,7 +56,8 @@ function ColourPalette() {
 
       //using p5.dom add the swatch to the palette and set its background colour
       //to be the colour value.
-      var colourSwatch = createDiv();
+      //Also: added the name of the color in each box, called dynamically and passed as upper-case string
+      var colourSwatch = createDiv(this.colours[i].toUpperCase());
       colourSwatch.class("colourSwatches");
       colourSwatch.id(colourID);
 
