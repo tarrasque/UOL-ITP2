@@ -11,19 +11,21 @@
       ####################################
       */
     </script>
+    <!-- add P5 JS dependencies below -->
     <script src="lib/p5.min.js"></script>
     <script src="lib/p5.dom.js"></script>
-
+    <!-- add Sketch file below -->
     <script src="sketch.js"></script>
 
     <!-- add extra scripts below -->
     <script src="toolbox.js"></script>
     <script src="colourPalette.js"></script>
+    <script src="sprayCan.js"></script>
     <script src="helperFunctions.js"></script>
     <script src="freehandTool.js"></script>
     <script src="lineToTool.js"></script>
     <script src="mirrorDrawTool.js"></script>
-    <!-- call CSS file -->
+    <!-- call CSS stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -35,11 +37,11 @@
         <button id="saveImageButton">Save Image</button>
       </div>
       <div class="box" id="sidebar"></div>
+      <!-- div for the canvas -->
       <div id="content"></div>
       <div class="box colourPalette"></div>
       <div class="box options"></div>
       <!-- div footer, splitted by grid, more details are in CSS style linked -->
-
       <div class="box footer">
         &copy; 2022. All Rights Reserved. Powered by: Luca - Tarrasqu3 -
         Galliani

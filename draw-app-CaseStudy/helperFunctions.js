@@ -5,8 +5,14 @@ function HelperFunctions() {
 
   //event handler for the clear button event. Clears the screen
   select("#clearButton").mouseClicked(function () {
-    //???
-
+    //regenerate a canvas to clean the canvas content
+    canvasContainer = select("#content");
+    var c = createCanvas(
+      canvasContainer.size().width,
+      canvasContainer.size().height
+    );
+    c.parent("content");
+    background(255);
     //call loadPixels to update the drawing state
     //this is needed for the mirror tool
     loadPixels();
