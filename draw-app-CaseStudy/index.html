@@ -16,32 +16,40 @@
     <script src="lib/p5.dom.js"></script>
     <!-- add Sketch file below -->
     <script src="sketch.js"></script>
-
     <!-- add extra scripts below -->
     <script src="toolbox.js"></script>
+    <!-- to handle the colour palette -->
     <script src="colourPalette.js"></script>
-    <script src="sprayCan.js"></script>
+    <!-- to the functions related to the buttons -->
     <script src="helperFunctions.js"></script>
+    <!-- to define the tools functionality -->
+    <script src="sprayCanTool.js"></script>
     <script src="freehandTool.js"></script>
     <script src="lineToTool.js"></script>
     <script src="mirrorDrawTool.js"></script>
+    <script src="QuadrantDrawTool.js"></script>
     <!-- call CSS stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <!-- div container, splitted by grid, more details are in CSS style linked -->
     <div class="wrapper">
+      <!-- add P5 JS dependencies below -->
+      <!-- header box -->
       <div class="box header">
         <b>Tarrasqu3</b> - Personal Drawing App
-        <button id="clearButton">Clean canvas</button>
-        <button id="saveImageButton">Save Image</button>
+        <button class="button" id="clearButton">Clean canvas</button>
+        <button class="button" id="saveImageButton">Take a screenshot</button>
       </div>
+      <!-- div dedicated to the painting tools -->
       <div class="box" id="sidebar"></div>
-      <!-- div for the canvas -->
+      <!-- div dedicated to the drawing canvas -->
       <div id="content"></div>
+      <!-- colour palette box -->
       <div class="box colourPalette"></div>
+      <!-- hide box dedicated to some activated tool functions-->
       <div class="box options"></div>
-      <!-- div footer, splitted by grid, more details are in CSS style linked -->
+      <!-- div footer, presenting myself -->
       <div class="box footer">
         &copy; 2022. All Rights Reserved. Powered by: Luca - Tarrasqu3 -
         Galliani
