@@ -1,4 +1,4 @@
-function mirrorDrawTool() {
+function MirrorDrawTool() {
   this.name = "mirrorDraw";
   this.icon = "assets/mirrorDraw.jpg";
 

@@ -6,13 +6,13 @@ var helpers = null;
 
 function setup() {
   //create a canvas to fill the content div from index.html
+
   canvasContainer = select("#content");
   var c = createCanvas(
     canvasContainer.size().width,
     canvasContainer.size().height
   );
   c.parent("content");
-
   //create helper functions and the colour palette
   helpers = new HelperFunctions();
   colourP = new ColourPalette();
@@ -23,12 +23,13 @@ function setup() {
   //add the tools to the toolbox.
   toolbox.addTool(new FreehandTool());
   toolbox.addTool(new LineToTool());
-  toolbox.addTool(new sprayCanTool());
-  toolbox.addTool(new mirrorDrawTool());
+  toolbox.addTool(new SprayCanTool());
+  toolbox.addTool(new MirrorDrawTool());
   toolbox.addTool(new QuadrantDrawTool());
+
   background(255);
 
-  loadPixels();
+  //loadPixels();
 }
 
 function draw() {

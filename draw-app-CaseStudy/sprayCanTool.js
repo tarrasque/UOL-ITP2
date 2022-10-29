@@ -1,4 +1,4 @@
-function sprayCanTool() {
+function SprayCanTool() {
   this.icon = "assets/sprayCan.jpg";
   this.name = "Spray Can";
   this.points = 13;

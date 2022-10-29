@@ -69,12 +69,19 @@ function QuadrantDrawTool() {
     push();
     strokeWeight(3);
     stroke("red");
-    //draw the line of symmetry
-    if (this.axis == "x") {
+
+    //draw the lines of symmetry
+    /*if (this.axis == "x") {
       line(width / 2, 0, width / 2, height);
+      line(0, height / 2, width, height / 2);
     } else {
+      line(width / 2, 0, width / 2, height);
       line(0, height / 2, width, height / 2);
     }
+    */
+    //draw the lines of symmetry
+    line(width / 2, 0, width / 2, height);
+    line(0, height / 2, width, height / 2);
     //return to the original stroke
     pop();
   };
@@ -117,7 +124,7 @@ function QuadrantDrawTool() {
   //adds a button and click handler to the options area. When clicked
   //toggle the line of symmetry between horizontal to vertical
 
-  this.populateOptions = function () {
+  /*  this.populateOptions = function () {
     select(".options").html(
       "<button id='directionButton'>Make Horizontal</button>"
     );
@@ -134,5 +141,5 @@ function QuadrantDrawTool() {
         button.html("Make Horizontal");
       }
     });
-  };
+  }; */
 }

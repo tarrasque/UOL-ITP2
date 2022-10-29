@@ -1,12 +1,13 @@
 function HelperFunctions() {
-  //p5.dom click click events. Notice that there is no this. at the
-  //start we don't need to do that here because the event will
-  //be added to the button and doesn't 'belong' to the object
-
   //event handler for the clear button event. updatePixels(); clears the screen
   select("#clearButton").mouseClicked(function () {
     if (confirm("Do you want clean the canvas?") == true) {
-      updatePixels();
+      //console.log("test " + toolbox.tools[0].name);
+      //console.log("test " + toolbox.selectedTool.name);
+      if (toolbox.selectedTool.name != "freehand") {
+        toolbox.selectTool("freehand");
+      }
+      clear();
     }
   });
 
