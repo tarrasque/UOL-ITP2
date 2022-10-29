@@ -6,6 +6,7 @@ function QuadrantDrawTool() {
   this.axis = "x";
   //line of symmetry is halfway across the screen
   this.lineOfSymmetry = width / 2;
+  this.lineOfSymmetry2 = height / 2;
 
   //this changes in the p5.dom click handler. So storing it as
   //a variable self now means we can still access this in the handler
@@ -19,6 +20,8 @@ function QuadrantDrawTool() {
   //mouse coordinates for the other side of the Line of symmetry.
   var previousOppositeMouseX = -1;
   var previousOppositeMouseY = -1;
+  var previousOppositeMouseX2 = -1;
+  var previousOppositeMouseY2 = -1;
 
   this.draw = function () {
     //display the last save state of pixels
@@ -31,8 +34,10 @@ function QuadrantDrawTool() {
       if (previousMouseX == -1) {
         previousMouseX = mouseX;
         previousMouseY = mouseY;
-        previousOppositeMouseX = this.calculateOpposite(mouseX, "x");
-        previousOppositeMouseY = this.calculateOpposite(mouseY, "y");
+        previousOppositeMouseX = this.calculateOppositeX(mouseX, "x");
+        previousOppositeMouseY = this.calculateOppositeX(mouseY, "y");
+        previousOppositeMouseX2 = this.calculateOppositeY(mouseX, "x");
+        previousOppositeMouseY2 = this.calculateOppositeY(mouseY, "y");
       }
 
       //if there are values in the previous locations
@@ -44,11 +49,16 @@ function QuadrantDrawTool() {
 
         //these are for the mirrored drawing the other side of the
         //line of symmetry
-        var oX = this.calculateOpposite(mouseX, "x");
-        var oY = this.calculateOpposite(mouseY, "y");
+        var oX = this.calculateOppositeX(mouseX, "x");
+        var oY = this.calculateOppositeX(mouseY, "y");
+        var oX2 = this.calculateOppositeY(mouseX, "x");
+        var oY2 = this.calculateOppositeY(mouseY, "y");
         line(previousOppositeMouseX, previousOppositeMouseY, oX, oY);
         previousOppositeMouseX = oX;
         previousOppositeMouseY = oY;
+        line(previousOppositeMouseX2, previousOppositeMouseY2, oX2, oY2);
+        previousOppositeMouseX2 = oX2;
+        previousOppositeMouseY2 = oY2;
       }
     }
     //if the mouse isn't pressed reset the previous values to -1
@@ -58,6 +68,8 @@ function QuadrantDrawTool() {
 
       previousOppositeMouseX = -1;
       previousOppositeMouseY = -1;
+      previousOppositeMouseX2 = -1;
+      previousOppositeMouseY2 = -1;
     }
 
     //after the drawing is done save the pixel state. We don't want the
@@ -92,7 +104,7 @@ function QuadrantDrawTool() {
    *@param a [x,y]: the axis of the coordinate (y or y)
    *@return number: the opposite coordinate
    */
-  this.calculateOpposite = function (n, a) {
+  this.calculateOppositeX = function (n, a) {
     //if the axis isn't the one being mirrored return the same
     //value
     if (a != this.axis) {
@@ -110,6 +122,27 @@ function QuadrantDrawTool() {
     //by the distance between it and n.
     else {
       return this.lineOfSymmetry - (n - this.lineOfSymmetry);
+    }
+  };
+
+  this.calculateOppositeY = function (n, a) {
+    //if the axis isn't the one being mirrored return the same
+    //value
+    if (a == this.axis) {
+      return n;
+    }
+
+    //if n is less than the line of symmetry return a coordinate
+    //that is far greater than the line of symmetry by the distance from
+    //n to that line.
+    if (n < this.lineOfSymmetry2) {
+      return this.lineOfSymmetry2 + (this.lineOfSymmetry2 - n);
+    }
+
+    //otherwise a coordinate that is smaller than the line of symmetry
+    //by the distance between it and n.
+    else {
+      return this.lineOfSymmetry2 - (n - this.lineOfSymmetry2);
     }
   };
 

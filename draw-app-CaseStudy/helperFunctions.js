@@ -13,6 +13,8 @@ function HelperFunctions() {
 
   //used the function saveCanvas() from P5js Library.
   select("#saveImageButton").mouseClicked(function () {
-    saveCanvas(canvasContainer, "Screenshot", "jpg");
+    toolbox.selectTool("freehand");
+
+    saveCanvas(content, "Screenshot", "jpg");
   });
 }
