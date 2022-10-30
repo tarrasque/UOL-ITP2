@@ -1,0 +1,123 @@
+html,
+body {
+	margin: 0px;
+	height: 100%;
+}
+
+/* button style */
+.button {
+	background-color: #9f8ca7;
+	/* Green */
+	border: none;
+	color: white;
+	padding: 2px 5px;
+	text-align: center;
+	text-decoration: none;
+	border: 3px solid #423a46;
+
+	display: inline-block;
+	font-size: 13px;
+}
+
+/* DIV data-grid container attributes */
+.wrapper {
+
+	display: grid;
+	height: 100%;
+	grid-template-columns: 80px 480px minmax(500px, 1fr);
+	grid-template-rows: 40px minmax(500px, 1fr) 160px 20px;
+	grid-template-areas:
+		"header header header"
+		"sidebar content content"
+		"colourP colourP options"
+		"footer footer footer";
+	background-color: #fff;
+	color: #444;
+}
+
+/* DIV box attributes */
+.box {
+	background-color: #444;
+	color: #fff;
+	font-size: 150%;
+}
+
+/* DIV header */
+.header {
+	grid-area: header;
+	border-radius: 5px;
+	background-color: rgb(139, 168, 157);
+	text-align: center;
+	border: 3px solid green;
+	padding: 3px 0;
+	font-family: Helvetica, sans-serif
+}
+
+
+/* DIV footer */
+.footer {
+	grid-area: footer;
+	text-align: center;
+	font-size: 12px;
+	font-style: inherit;
+}
+
+.sideBarItem {
+	max-height: 50px;
+	max-width: 50px;
+	padding: 5px;
+}
+
+.sideBarItem img {
+	max-height: 50px;
+	max-Width: 50px;
+}
+
+.colourPalette {
+	grid-area: colourP;
+	padding: 10px;
+	display: flex;
+	flex-direction: grid;
+	flex-flow: wrap;
+}
+
+.options {
+	grid-area: options;
+	padding: 15px;
+}
+
+.colourSwatches {
+	box-sizing: border-box;
+	width: 78px;
+	height: 35px;
+	max-height: 40px;
+	max-width: 100px;
+	margin: 5px;
+	padding-left: 5px;
+	padding-top: 8px;
+	font-size: 16px;
+	font-style: inherit;
+}
+
+/* ID's */
+#sidebar {
+	grid-area: sidebar;
+	overflow-y: scroll;
+}
+
+#content {
+	grid-area: content;
+}
+
+/* Correct contrast of palette's colors */
+#whiteSwatch,
+#limeSwatch,
+#pinkSwatch,
+#redSwatch,
+#aquaSwatch,
+#orangeSwatch,
+#yellowSwatch,
+#silverSwatch,
+#fuchsiaSwatch {
+	color: black;
+}
