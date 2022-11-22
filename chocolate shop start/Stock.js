@@ -1,6 +1,6 @@
 function Stock() {
   //an array to hold the stock
-  this.stock;
+  this.stock = [];
 
   //add a chocolate bar to the array each item has a chocolate bar object and a
   //quantity
@@ -10,13 +10,11 @@ function Stock() {
       chocolateBar: new ChocolateBar(name, imageFile, weight, price, display),
       quantity: quantity,
     });
-    console.log("print quantity " + quantity);
-    console.log("print ChocolateBar " + ChocolateBar);
   };
 
   //get the number of lines of chocolate bars
   this.stockLines = function () {
-    //console.log( "print here " + this.stockLines.length);
+    //console.log("print here " + this.stockLines.length);
     return this.stockLines.length;
   };
 

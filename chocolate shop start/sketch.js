@@ -34,7 +34,8 @@ var lines = [
 ];
 
 function setup() {
-  createCanvas(800, 600);
+  var c = createCanvas(800, 600);
+  c.parent("content");
   //add our chocolate Stock to the shopStock object
   shopStock = new Stock();
   var display = {
@@ -68,8 +69,8 @@ function setup() {
 
 function draw() {
   background(249, 207, 214);
-
   //draw the chocolate bars if there is stock
+  //console.log("print here " + shopStock.stockLines());
   for (var i = 0; i < shopStock.stockLines(); i++) {
     if (shopStock.getStockLevel(i) > 0) {
       shopStock.getLine(i).chocolateBar.draw();
@@ -94,15 +95,4 @@ function draw() {
   textSize(50);
   text("Basket total: £" + basket.basketTotal(), width / 2, height - 50);
   pop();
-}
-
-//check for mouse clicks
-function mousePressed() {
-  //call the check click function in the stock object
-  var clickedBar = this.shopStock.checkClick(mouseX, mouseY);
-  //if a chocolate bar is returned there is stock and we can add it to the basket
-  if (clickedBar != null && shopStock.reduceStock(clickedBar)) {
-    basket.addItem(clickedBar);
-    console.log(basket);
-  }
 }

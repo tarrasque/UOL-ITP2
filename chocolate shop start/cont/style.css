@@ -1,13 +1,12 @@
 html,
 body {
-	margin: 0px;
-	height: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 /* button style */
 .button {
 	background-color: #9f8ca7;
-	/* Green */
 	border: none;
 	color: white;
 	padding: 2px 5px;
@@ -24,13 +23,12 @@ body {
 
 	display: grid;
 	height: 100%;
-	grid-template-columns: 80px 480px minmax(500px, 1fr);
-	grid-template-rows: 40px minmax(500px, 1fr) 160px 20px;
+	grid-template-columns: 90px minmax(500px, 1fr);
+	grid-template-rows: 80px minmax(500px, 1fr) 20px;
 	grid-template-areas:
-		"header header header"
-		"sidebar content content"
-		"colourP colourP options"
-		"footer footer footer";
+		"header header"
+		"sidebar content"
+		"footer footer";
 	background-color: #fff;
 	color: #444;
 }
@@ -62,41 +60,9 @@ body {
 	font-style: inherit;
 }
 
-.sideBarItem {
-	max-height: 50px;
-	max-width: 50px;
-	padding: 5px;
-}
-
-.sideBarItem img {
-	max-height: 50px;
-	max-Width: 50px;
-}
-
-.colourPalette {
-	grid-area: colourP;
-	padding: 10px;
-	display: flex;
-	flex-direction: grid;
-	flex-flow: wrap;
-}
-
 .options {
 	grid-area: options;
 	padding: 15px;
-}
-
-.colourSwatches {
-	box-sizing: border-box;
-	width: 78px;
-	height: 35px;
-	max-height: 40px;
-	max-width: 100px;
-	margin: 5px;
-	padding-left: 5px;
-	padding-top: 8px;
-	font-size: 16px;
-	font-style: inherit;
 }
 
 /* ID's */
@@ -107,17 +73,4 @@ body {
 
 #content {
 	grid-area: content;
-}
-
-/* Correct contrast of palette's colors */
-#whiteSwatch,
-#limeSwatch,
-#pinkSwatch,
-#redSwatch,
-#aquaSwatch,
-#orangeSwatch,
-#yellowSwatch,
-#silverSwatch,
-#fuchsiaSwatch {
-	color: black;
 }
